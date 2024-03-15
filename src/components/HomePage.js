@@ -1,4 +1,4 @@
-//eslint no-use-before-define: 0
+/* eslint-disable no-use-before-define */
 import { useEffect, useState } from 'react';
 // import Dropdown from './Dropdown';
 import Image from '../assets/background.jpg';
