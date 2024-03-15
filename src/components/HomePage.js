@@ -11,14 +11,14 @@ import 'react-toastify/dist/ReactToastify.css';
 
 </script>
 export default function HomePage() {
-  const [bookedCab, setbookedCab] = useState({
+  const [bookedCab] = useState({
     amount: "",
     label: "",
     bookingTime: "",
     freeTime: "",
     value: "",
   });
-  const [cab, setCab] = useState({
+  const [setCab] = useState({
     label: "",
     value: "",
   });
@@ -222,7 +222,7 @@ export default function HomePage() {
       + ':' + date.getMinutes()
       + ":" + date.getSeconds();
     bookedCab.freeTime = distance;
-    const { amount, label, bookingTime, freeTime, value } = bookedCab;
+    const {freeTime} = bookedCab;
     bookedCab.value = valuee;
     //add to database
     fireDb.child("bookings").push(bookedCab, (err) => {
@@ -252,7 +252,7 @@ export default function HomePage() {
   }, []);
 
   //get cab details
-  let [cabs, setCabs] = useState([]);
+  let [setCabs] = useState([]);
 
   useEffect(() => {
     fireDb.child("cabs").on("value", (snapshot) => {
