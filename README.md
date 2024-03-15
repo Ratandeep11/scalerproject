@@ -32,15 +32,10 @@ This will start the development server.
 
 ## Scripts
 - `start`: Starts the development server.
-- `build`: Builds the app for production.
 - `test`: Runs tests.
 - `eject`: Ejects the app from Create React App.
 
 
-## Browserslist
-This project targets the following browsers:
-- Production: `>0.2%, not dead, not op_mini all`
-- Development: `last 1 chrome version, last 1 firefox version, last 1 safari version`
 
 ## Author
 Ratandeep Goyal
