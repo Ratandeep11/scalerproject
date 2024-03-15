@@ -254,7 +254,8 @@ export default function HomePage() {
   }, []);
 
   //get cab details
-  let [setCabs] = useState([]);
+  let [cabs, setCabs] = useState([]);
+  // eslint-disable-next-line no-unused-vars
 
   useEffect(() => {
     fireDb.child("cabs").on("value", (snapshot) => {
