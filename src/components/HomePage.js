@@ -18,7 +18,7 @@ export default function HomePage() {
     freeTime: "",
     value: "",
   });
-  const [setCab] = useState({
+  const [] = useState({
     label: "",
     value: "",
   });
@@ -222,7 +222,7 @@ export default function HomePage() {
       + ':' + date.getMinutes()
       + ":" + date.getSeconds();
     bookedCab.freeTime = distance;
-    const {freeTime} = bookedCab;
+    const {} = bookedCab;
     bookedCab.value = valuee;
     //add to database
     fireDb.child("bookings").push(bookedCab, (err) => {
