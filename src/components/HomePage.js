@@ -254,7 +254,7 @@ export default function HomePage() {
   }, []);
 
   //get cab details
-  let [cabs, setCabs] = useState([]);
+  let [_cabs, setCabs] = useState([]);
   // eslint-disable-next-line no-unused-vars
 
   useEffect(() => {
