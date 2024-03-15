@@ -253,9 +253,7 @@ export default function HomePage() {
     };
   }, []);
 
-  //get cab details
-  let [_cabs, setCabs] = useState([]);
-  // eslint-disable-next-line no-unused-vars
+  let [_cabs, setCabs] = useState([]); // eslint-disable-line no-unused-vars
 
   useEffect(() => {
     fireDb.child("cabs").on("value", (snapshot) => {
