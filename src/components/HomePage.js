@@ -6,7 +6,6 @@ import fireDb from "../firebase";
 import routeImage from '../assets/route.jpeg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { collection, addDoc, getDocs } from "firebase/firestore";
 
 <script src="https://smtpjs.com/v3/smtp.js">
 
@@ -23,10 +22,6 @@ export default function HomePage() {
     label: "",
     value: "",
   });
-  const getInitialState = () => {
-    const value = 1;
-    return value;
-  };
   const getInitialStatee = () => {
     const value = 'A';
     return value;
@@ -63,25 +58,6 @@ export default function HomePage() {
     bookedCab.label = options[6 - valuee].label;
   };
   //Send mail
-  const handleClickk = () => {
-    // event.preventDefault();
-    const config = {
-      Username: 'avigoyal0453@gmail.com',
-      Password: '43D16463F9A49CD3DC85C6107D4F140A6739',
-      Host: 'smtp.elasticemail.com',
-      Port: 2525,
-      To: `${email}`,
-      From: "avigoyal0453@gmail.com",
-      Subject: "Ride Confirmed ! We are very excited to ride with you !",
-      Body: `Thankyou for using EZTripFinder. Trip confirmed .\nEstimated time taken for the trip: ${distance}minutes.\nAmount to be paid:  ${total + taxes}.\n Happy journey !`
-    }
-    if (window.Email) {
-      window.Email.send(config).then(() => alert("Confirmation email sent (Check spam folder if not in inbox)"));
-    }
-    options[6 - valuee].value = 0;
-    setOptions(options);
-    setBoth(false);
-  };
   const handleClickkk = () => {
     setOptions(options);
     setBoth(true);
@@ -218,9 +194,6 @@ export default function HomePage() {
   const pathh = findShortestPath(graph, pickup, drop).path;
   const total = (distance * valuee);
   const taxes = (total * 18) / 100;
-  const myTimer = (value, label) => {
-    options[6 - value].value = 6 - options.findIndex(x => x.label === label);
-  }
   //sending booking details to our firebase database
   const submitBooking = async (event) => {
     event.preventDefault();
