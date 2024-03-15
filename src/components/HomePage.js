@@ -254,7 +254,7 @@ export default function HomePage() {
   }, []);
 
   //get cab details
-  let [cabs, setCabs] = useState([]);
+  let [setCabs] = useState([]);
 
   useEffect(() => {
     fireDb.child("cabs").on("value", (snapshot) => {
